@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
@@ -29,7 +30,7 @@ public class MainActivity extends ListActivity {
     private EditText mTweetText;
     private Button mSubmitButton;
     private ArrayList<Tweet> mTweets;
-    private TweetAdapter mAdapter;
+    public static TweetAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,20 @@ public class MainActivity extends ListActivity {
         }
 
         Toast.makeText(this, "welcome" + mUser.getName(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onListItemClick(ListView l,View v, int position, long id) {
+        super.onListItemClick(l,v,position,id);
+        Tweet thisTweet = (Tweet) mAdapter.getItem(position);
+        Bundle bundle = new Bundle();
+        bundle.putString("content",thisTweet.getContent());
+        bundle.putString("user", thisTweet.getUser().getName());
+        bundle.putLong("createdat",thisTweet.getCreatedAt());
+
+        Intent intent = new Intent(this,TweetActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
 

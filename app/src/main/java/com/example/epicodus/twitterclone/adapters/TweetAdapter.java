@@ -38,7 +38,9 @@ public class TweetAdapter  extends BaseAdapter{
     public  long getItemId(int position) {
         return 0;
     }
-
+    public Context getContext() {
+        return mContext;
+    }
 
 
     private static class ViewHolder {
