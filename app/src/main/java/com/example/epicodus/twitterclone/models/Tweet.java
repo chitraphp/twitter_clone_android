@@ -72,6 +72,15 @@ public class Tweet extends Model {
 
 
     public static List<Tweet> all() {
+
         return new Select().from(Tweet.class).execute();
+    }
+
+    public List<Response> responses() {
+        return getMany(Response.class, "Tweet");
+    }
+
+    public static Tweet find(String name) {
+        return new Select().from(Tweet.class).where("Content = ?", name).executeSingle();
     }
 }

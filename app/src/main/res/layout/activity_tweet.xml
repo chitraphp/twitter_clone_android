@@ -37,12 +37,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="This is a 140 character tweet used to test the dimensions of my Text View box. Here are 50 extra characters used as a placeholder for tests!"
-        android:id="@+id/tweetContentTextView"
+        android:id="@+id/tweetView"
         android:textSize="17sp"
         android:textColor="@android:color/black"
         android:padding="8dp"
         android:layout_below="@+id/nameLabel"
         android:layout_alignLeft="@+id/nameLabel"
         android:layout_alignStart="@+id/nameLabel"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Response"
+        android:id="@+id/newResponseLabel"
+        android:textSize="30dp"
+        android:layout_above="@+id/responseSubmitButton"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newResponseEdit"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tweetSubmitButton"
+        android:layout_toStartOf="@+id/tweetSubmitButton"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tweet"
+        android:id="@+id/responseSubmitButton"
+        android:layout_alignBottom="@+id/newResponseEdit"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:layout_below="@+id/tweetView"
+        android:layout_alignRight="@+id/responseSubmitButton"
+        android:layout_alignEnd="@+id/responseSubmitButton"
+        android:layout_above="@+id/newResponseLabel"/>
 
 </RelativeLayout>

@@ -51,6 +51,7 @@ public class MainActivity extends ListActivity {
             startActivity(intent);
         }
 
+
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +70,7 @@ public class MainActivity extends ListActivity {
 
             }
         });
+
     }
 
     private boolean isRegistered() {
@@ -104,7 +106,7 @@ public class MainActivity extends ListActivity {
         bundle.putString("user", thisTweet.getUser().getName());
         bundle.putLong("createdat",thisTweet.getCreatedAt());
 
-        Intent intent = new Intent(this,TweetActivity.class);
+        Intent intent = new Intent(this, TweetActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
     }
