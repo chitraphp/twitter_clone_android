@@ -86,6 +86,10 @@ public class MainActivity extends ListActivity {
 
     }
 
+    private boolean ismoreChars(String string) {
+        return true;
+    }
+
     private void setUser(String username) {
         User user = User.find(username);
         if (user != null) mUser = user;

@@ -70,7 +70,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tweet"
+        android:text="Response"
         android:id="@+id/responseSubmitButton"
         android:layout_alignBottom="@+id/newResponseEdit"
         android:layout_alignParentRight="true"

@@ -83,4 +83,16 @@ public class Tweet extends Model {
     public static Tweet find(String name) {
         return new Select().from(Tweet.class).where("Content = ?", name).executeSingle();
     }
+
+    public void parseHashTAgs() {
+        String[] words = mContent.split("\\s+");
+
+        for(String word : words) {
+            if (word.startsWith("#")) {
+                Tag tag = Tag.newTag(word);
+                TagTweet tagTweet = new TagTweet(tag,this);
+                tagTweet.save();
+            }
+        }
+    }
 }

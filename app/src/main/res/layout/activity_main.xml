@@ -6,7 +6,8 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context=".MainActivity">
+                tools:context=".MainActivity"
+                >
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,4 +49,13 @@
         android:layout_alignRight="@+id/tweetSubmitButton"
         android:layout_alignEnd="@+id/tweetSubmitButton"
         android:layout_above="@+id/newTweetLabel"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchButtonImage"
+        android:layout_alignBottom="@+id/newTweetEdit"
+        android:layout_toRightOf="@+id/tweetSubmitButton"
+        android:layout_toEndOf="@+id/tweetSubmitButton"
+        android:src="@android:drawable/ic_menu_search"/>
 </RelativeLayout>
